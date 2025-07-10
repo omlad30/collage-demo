@@ -552,3 +552,107 @@ section {
     max-height: 220px;
   }
 }
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Hover Effects */
+.hover-effect {
+    transition: transform 0.3s ease;
+}
+
+.hover-effect:hover {
+    transform: scale(1.1);
+}
+
+/* Card Hover Effects */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Special Collection Animation */
+.special-collection-section .card img {
+    transition: transform 0.5s ease;
+}
+
+.special-collection-section .card:hover img {
+    transform: scale(1.05);
+}
+
+/* Custom Button Styles */
+.btn-warning {
+    background: linear-gradient(45deg, #FF8008, #FFA751);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 128, 8, 0.4);
+}
+
+/* Hero Section Enhancement */
+.slider-main {
+    background: linear-gradient(135deg, #f6f8fd 0%, #f1f5fb 100%);
+    padding: 4rem 0;
+}
+
+.slider-main h1 {
+    background: linear-gradient(120deg, #1a2a6c, #b21f1f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Slider Styles */
+.carousel-inner {
+  height: 400px;
+}
+
+.slider-img {
+  object-fit: contain;
+  height: 400px;
+  background: radial-gradient(50% 50% at 50% 50%, #c7f6d0 0%, #7cb686 92.19%);
+}
+
+/* Enhance carousel controls */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+/* Add smooth transition to carousel items */
+.carousel-item {
+  transition: transform 0.6s ease-in-out;
+}
+@media (max-width: 991px) {
+  .slider-img {
+    max-height: 340px;
+  }
+}
+@media (max-width: 767px) {
+  .slider-img {
+    max-height: 220px;
+  }
+}
