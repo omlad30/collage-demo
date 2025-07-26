@@ -1,147 +1,691 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap');
+
+/* General Body & Typography */
 body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fff;
-      margin: 0;
-      padding: 0;
+    font-family: 'Open Sans', sans-serif; /* Attractive, highly readable body font */
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif; /* Strong, modern headings */
+    color: #212529;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+/* Header (Bootstrap Navbar Overrides) */
+.navbar {
+    background: linear-gradient(to right, #0a1f44, #007bff); /* Your custom gradient */
+    color: white;
+    padding: 18px 5%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* `fixed-top` makes it sticky, so `position: sticky` and `top: 0` are handled by Bootstrap */
+    z-index: 1000;
+}
+
+.navbar-brand.logo { /* Targeting the logo specifically */
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff !important; /* Ensure it stays white */
+}
+
+.navbar-nav .nav-item .nav-link { /* Targeting specific nav links for custom styles */
+    color: white !important;
+    font-weight: 500;
+    padding: 8px 15px;
+    margin: 0 15px; /* Spacing between desktop nav items */
+    transition: all 0.3s ease;
+    position: relative;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.navbar-nav .nav-item .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #f0ad4e;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover::after {
+    transform: translateX(0);
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons i {
+    font-size: 20px;
+    margin-left: 20px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.header-icons i:hover {
+    color: #f0ad4e;
+}
+
+/* Navbar Toggler (Hamburger Icon) */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5) !important; /* Custom border color */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important; /* White hamburger lines */
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 5%;
+    background: #ffffff;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 550px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 30px;
+}
+
+.hero-text h1 {
+    font-size: 56px;
+    font-weight: 800;
+    color: #0a1f44;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
+    font-style: normal;
+    max-width: 450px;
+}
+
+.carousel-container {
+    flex: 1;
+    max-width: 550px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-inner {
+    height: 450px;
+}
+
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    border: 2px solid #007bff;
+    color: #007bff;
+    background-color: transparent;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    padding: 8px 20px;
+    font-size: 0.9em;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    color: white;
+}
+
+.btn-light {
+    background-color: #ffffff;
+    color: #0a1f44;
+    font-weight: 700;
+    padding: 15px 40px;
+    border-radius: 10px;
+}
+
+.btn-light:hover {
+    background-color: #e2e6ea;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Section General Styling */
+section {
+    padding: 70px 0;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+section:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #0a1f44;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #f0ad4e;
+    border-radius: 2px;
+}
+
+/* Categories Section */
+.categories-section {
+    background-color: #f8f9fa;
+}
+
+.category-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.category-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.category-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #0a1f44;
+}
+
+/* Product Cards and Best Deals (Best Sellers/New Arrivals) */
+.products-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.products-row .col-md-3 {
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #0a1f44;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+}
+
+.card-text.text-success {
+    color: #28a745;
+}
+
+.card-text.text-danger {
+    color: #dc3545;
+}
+
+.card-text del {
+    color: #999;
+    font-size: 0.9em;
+    margin-right: 5px;
+}
+
+.card .btn-sm {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    margin-top: auto;
+}
+
+/* Customization Banner */
+.customization-banner {
+    background: url('https://via.placeholder.com/1500x400?text=Customize+Your+Jersey') no-repeat center center/cover;
+    color: white;
+    padding: 80px 5%;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.customization-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.customization-banner > * {
+    position: relative;
+    z-index: 2;
+}
+
+.customization-banner h2 {
+    color: white;
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.customization-banner p {
+    font-size: 22px;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    line-height: 1.5;
+}
+
+/* New Arrivals Section */
+.new-arrivals {
+    background-color: #fdfdfd;
+}
+
+.product-card.new-arrival {
+    position: relative;
+}
+
+.new-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    z-index: 10;
+}
+
+
+/* Testimonial Section */
+.testimonials {
+    background-color: #f8f9fa;
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    padding: 24px;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card .text-center {
+    text-align: center;
+}
+
+.testimonial-card .text-center i {
+    color: #f0ad4e;
+    margin-bottom: 15px;
+    font-size: 3em;
+}
+
+.testimonial-card p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.7;
+    font-style: italic;
+    text-align: center;
+}
+
+.testimonial-card h6 {
+    font-size: 1rem;
+    color: #777;
+    margin-top: 15px;
+    text-align: right;
+}
+
+/* About Us Section */
+.about-us {
+    background-color: #ffffff;
+}
+
+.about-us img {
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    height: auto;
+}
+
+.about-us p.lead {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #444;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #f8f9fa;
+}
+
+.contact-section .form-group {
+    margin-bottom: 1rem;
+}
+
+.contact-section .form-control {
+    border-radius: 8px;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+    width: 100%;
+}
+
+.contact-section .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.contact-section label {
+    font-weight: 600;
+    color: #555;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contact-section .btn-block {
+    width: 100%;
+    display: block;
+}
+
+
+/* Footer */
+.footer {
+    background: linear-gradient(to right, #0a1f44, #007bff);
+    color: white;
+    padding: 40px 0;
+    margin-top: 50px;
+    border-top: 5px solid #f0ad4e;
+}
+
+.footer h5 {
+    color: #f0ad4e;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+    display: block;
+}
+
+.footer ul li a:hover {
+    color: #f0ad4e;
+    text-decoration: underline;
+}
+
+.footer .fab {
+    font-size: 24px;
+}
+
+.footer hr {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.footer p {
+    font-size: 0.9rem;
+    color: #e0e0e0;
+    margin-bottom: 0;
+}
+
+/* Responsive Adjustments for Navbar Collapse */
+
+/* Styles for devices smaller than 992px (lg breakpoint) */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        /* On small screens, nav items stack, remove horizontal margins */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        text-align: center; /* Center links when stacked */
+        width: 100%; /* Take full width */
     }
 
-    /* Header */
-    .header {
-      background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
-      color: white;
-      padding: 15px 5%;
-    }
-    .header .logo {
-      font-size: 28px;
-      font-weight: bold;
-    }
-    .nav-link {
-      color: white !important;
-      font-weight: 500;
-    }
-    .header-icons i {
-      font-size: 18px;
-      margin-left: 15px;
-      color: white;
+    .navbar-nav .nav-item .nav-link {
+        margin: 5px 0; /* Vertical spacing for stacked links */
     }
 
-    /* Hero Section */
+    .header-icons {
+        justify-content: center; /* Center icons when stacked below nav */
+        width: 100%; /* Take full width */
+        margin-top: 15px; /* Space between nav and icons */
+    }
+
+    /* General responsive adjustments from previous versions */
     .hero-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      padding: 60px 5%;
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 3%;
     }
     .hero-text {
-      flex: 1;
-      max-width: 500px;
-      min-height: 300px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .hero-text h1 {
-      font-size: 48px;
-      font-weight: bold;
-      color: #4b0082;
-    }
-    .hero-text p {
-      font-size: 16px;
-      color: #ff4500;
-      margin-top: 10px;
-      font-style: italic;
+        max-width: 100%;
+        padding-right: 0;
+        margin-bottom: 40px;
     }
     .carousel-container {
-      flex: 1;
-      max-width: 500px;
+        max-width: 100%;
+    }
+    .hero-text h1 {
+        font-size: 48px;
     }
     .carousel-inner {
-      height: 300px;
+        height: 350px; /* Adjust for medium screens */
     }
-    .carousel-item img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      border-radius: 10px;
+    .customization-banner {
+        padding: 60px 3%;
     }
+    .customization-banner h2 {
+        font-size: 38px;
+    }
+    .customization-banner p {
+        font-size: 18px;
+    }
+    .about-us .col-md-6, .contact-section .col-md-8 {
+        margin-bottom: 30px;
+    }
+}
 
-    /* Buttons */
-    .btn-warning {
-      background-color: #ff7f00;
-      color: white;
-      font-weight: bold;
-      width: 200px;
-      padding: 12px 24px;
-      border-radius: 6px;
-      text-transform: uppercase;
-      transition: background-color 0.3s ease;
+/* Styles for devices smaller than 768px (md breakpoint) */
+@media (max-width: 767.98px) {
+    .hero-text h1 {
+        font-size: 38px;
     }
-    .btn-warning:hover {
-      background-color: #e56700;
-      text-decoration: none;
+    .hero-text p {
+        font-size: 16px;
     }
+    .carousel-inner {
+        height: 300px; /* Adjust for smaller screens */
+    }
+    h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    .category-card, .card, .testimonial-card {
+        margin-bottom: 25px;
+    }
+    .customization-banner h2 {
+        font-size: 30px;
+    }
+    .customization-banner p {
+        font-size: 16px;
+    }
+    .btn-light {
+        padding: 12px 30px;
+    }
+}
 
-    /* Cards */
-    .card-img-top {
-      height: 200px;
-      object-fit: cover;
+/* Styles for devices smaller than 576px (sm breakpoint / mobile portrait) */
+@media (max-width: 575.98px) {
+    .hero-section {
+        padding: 50px 3%;
     }
-    .card {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border-radius: 8px;
-      padding: 10px;
+    .hero-text h1 {
+        font-size: 32px;
     }
-
-    /* Featured Banner */
-    .featured-banner {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      padding: 60px 5%;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    .hero-text p {
+        font-size: 15px;
     }
-    .featured-text {
-      flex: 1;
-      max-width: 500px;
+    .carousel-inner {
+        height: 250px; /* Further adjust for very small screens */
     }
-    .featured-text h2 {
-      font-size: 36px;
-      font-weight: bold;
-      color: #4b0082;
+    h2 {
+        font-size: 28px;
     }
-    .featured-text p {
-      font-size: 16px;
-      color: #555;
-      margin-top: 10px;
+    .category-card, .card, .testimonial-card {
+        padding: 20px;
     }
-    .featured-text .btn {
-      background-color: #ff7f00;
-      color: white;
-      font-weight: bold;
-      padding: 10px 20px;
-      border-radius: 6px;
-      margin-top: 20px;
-      transition: background-color 0.3s ease;
+    .footer .col-md-4 {
+        margin-bottom: 20px;
     }
-    .featured-text .btn:hover {
-      background-color: #e56700;
+    .footer .col-md-4:last-child {
+        margin-bottom: 0;
     }
-    .featured-image {
-      flex: 1;
-      max-width: 500px;
-      text-align: center;
-    }
-    .featured-image img {
-      width: 100%;
-      max-height: 300px;
-      object-fit: contain;
-      border-radius: 10px;
-    }
+}
