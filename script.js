@@ -1,4 +1,4 @@
-// This file can be used for any interactive JavaScript elements.
+    // This file can be used for any interactive JavaScript elements.
 
 document.addEventListener('DOMContentLoaded', (event) => {
     console.log('The Club.Jersey website loaded successfully!');
@@ -10,3 +10,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
         mirror: false,   // whether elements should animate out while scrolling past them
     });
 });
+    
