@@ -7,17 +7,22 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="script.js"></script>
 </head>
 <body>
-    <header class="navbar navbar-expand-lg navbar-dark fixed-top"> <div class="container-fluid"> <a class="navbar-brand logo" href="#">The club.jersey</a>
+    <header class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand logo" href="#">The club.jersey</a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto"> <li class="nav-item">
-                        <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">HOME</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#shop">SHOP</a>
@@ -41,14 +46,16 @@
         </div>
     </header>
 
-    <div style="padding-top: 76px;"></div> <section class="hero-section">
-        <div class="hero-text">
+    <div style="padding-top: 76px;"></div>
+
+    <section class="hero-section">
+        <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
             <h1>Unleash Your Passion!</h1>
             <p>Shop the hottest football jerseys. Custom names, limited editions, and explosive deals.</p>
             <a href="#shop" class="btn btn-primary mt-4">Shop Now <i class="fas fa-arrow-right ml-2"></i></a>
         </div>
 
-        <div id="jerseySlider" class="carousel slide carousel-container" data-ride="carousel" data-interval="3000">
+        <div id="jerseySlider" class="carousel slide carousel-container" data-ride="carousel" data-interval="3000" data-aos="fade-left" data-aos-duration="1000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="https://m.media-amazon.com/images/I/51t+XPsB5qL._AC_UL480_FMwebp_QL65_.jpg" class="d-block w-100" alt="Jersey 1" />
@@ -75,23 +82,23 @@
 
     <section class="categories-section py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Shop by Category</h2>
+            <h2 class="text-center mb-5" data-aos="fade-up">Shop by Category</h2>
             <div class="row">
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
                     <div class="category-card shadow-sm text-center">
                         <img src="https://m.media-amazon.com/images/I/61vYpS8VfQL._AC_UL480_FMwebp_QL65_.jpg" alt="Club Jerseys">
                         <h3>Club Jerseys</h3>
                         <a href="#" class="btn btn-secondary">Explore <i class="fas fa-arrow-right ml-2"></i></a>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
                     <div class="category-card shadow-sm text-center">
                         <img src="https://m.media-amazon.com/images/I/61P0Qf7b7kL._AC_UL480_FMwebp_QL65_.jpg" alt="National Teams">
                         <h3>National Teams</h3>
                         <a href="#" class="btn btn-secondary">Explore <i class="fas fa-arrow-right ml-2"></i></a>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
                     <div class="category-card shadow-sm text-center">
                         <img src="https://m.media-amazon.com/images/I/51wG6+xG6AL._AC_UL480_FMwebp_QL65_.jpg" alt="Retro & Vintage">
                         <h3>Retro & Vintage</h3>
@@ -106,9 +113,9 @@
 
     <section id="shop" class="featured-products py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Our Best Sellers</h2>
+            <h2 class="text-center mb-5" data-aos="fade-up">Our Best Sellers</h2>
             <div class="row products-row">
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card h-100 shadow-sm">
                         <img src="https://m.media-amazon.com/images/I/51t+XPsB5qL._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="Pro Jersey">
                         <div class="card-body text-center">
@@ -119,7 +126,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="card h-100 shadow-sm">
                         <img src="https://m.media-amazon.com/images/I/61a8GKXo2EL._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="Elite Jersey">
                         <div class="card-body text-center">
@@ -130,7 +137,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="card h-100 shadow-sm">
                         <img src="https://m.media-amazon.com/images/I/61PJHqh-PVL._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="Limited Edition Jersey">
                         <div class="card-body text-center">
@@ -141,7 +148,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="400">
                     <div class="card h-100 shadow-sm">
                         <img src="https://m.media-amazon.com/images/I/61PJHqh-PVL._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="Retro Jersey">
                         <div class="card-body text-center">
@@ -152,7 +159,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-4">
+            <div class="text-center mt-4" data-aos="fade-up">
                 <a href="#shop" class="btn btn-outline-primary">View All Products <i class="fas fa-long-arrow-alt-right ml-2"></i></a>
             </div>
         </div>
@@ -160,7 +167,7 @@
 
     ---
 
-    <section class="customization-banner py-5 text-white">
+    <section class="customization-banner py-5 text-white" data-aos="zoom-in">
         <div class="container text-center">
             <h2>Make It Yours!</h2>
             <p class="lead">Personalize your jersey with your name and number. Stand out from the crowd!</p>
@@ -172,9 +179,9 @@
 
     <section class="new-arrivals py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Just Dropped! New Arrivals</h2>
+            <h2 class="text-center mb-5" data-aos="fade-up">Just Dropped! New Arrivals</h2>
             <div class="row products-row">
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 mb-4" data-aos="fade-left" data-aos-delay="100">
                     <div class="card h-100 shadow-sm product-card new-arrival">
                         <span class="badge badge-danger new-badge">NEW</span>
                         <img src="https://m.media-amazon.com/images/I/61T0f4bU74L._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="New Arrival 1">
@@ -185,7 +192,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 mb-4" data-aos="fade-left" data-aos-delay="200">
                     <div class="card h-100 shadow-sm product-card new-arrival">
                         <span class="badge badge-danger new-badge">NEW</span>
                         <img src="https://m.media-amazon.com/images/I/61X-U9XJ5nL._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="New Arrival 2">
@@ -196,7 +203,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 mb-4" data-aos="fade-left" data-aos-delay="300">
                     <div class="card h-100 shadow-sm product-card new-arrival">
                         <span class="badge badge-danger new-badge">NEW</span>
                         <img src="https://m.media-amazon.com/images/I/61-Hw+5G3QL._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="New Arrival 3">
@@ -207,7 +214,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 mb-4" data-aos="fade-left" data-aos-delay="400">
                     <div class="card h-100 shadow-sm product-card new-arrival">
                         <span class="badge badge-danger new-badge">NEW</span>
                         <img src="https://m.media-amazon.com/images/I/611D4-6d9AL._AC_UL480_FMwebp_QL65_.jpg" class="card-img-top" alt="New Arrival 4">
@@ -219,7 +226,7 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-4">
+            <div class="text-center mt-4" data-aos="fade-up">
                 <a href="#shop" class="btn btn-outline-primary">Discover More <i class="fas fa-plus ml-2"></i></a>
             </div>
         </div>
@@ -229,9 +236,9 @@
 
     <section id="testimonials" class="testimonials py-5">
         <div class="container">
-            <h2 class="text-center mb-5">What Our Fans Say</h2>
+            <h2 class="text-center mb-5" data-aos="fade-up">What Our Fans Say</h2>
             <div class="row">
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4" data-aos="fade-right" data-aos-delay="100">
                     <div class="card shadow-sm p-4 testimonial-card">
                         <div class="text-center mb-3">
                             <i class="fas fa-user-circle fa-3x text-warning"></i>
@@ -241,7 +248,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4" data-aos="fade-right" data-aos-delay="200">
                     <div class="card shadow-sm p-4 testimonial-card">
                         <div class="text-center mb-3">
                             <i class="fas fa-trophy fa-3x text-warning"></i>
@@ -251,7 +258,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4" data-aos="fade-right" data-aos-delay="300">
                     <div class="card shadow-sm p-4 testimonial-card">
                         <div class="text-center mb-3">
                             <i class="fas fa-star fa-3x text-warning"></i>
@@ -268,12 +275,12 @@
 
     <section id="about" class="about-us py-5">
         <div class="container">
-            <h2 class="text-center mb-5">About The club.jersey</h2>
+            <h2 class="text-center mb-5" data-aos="fade-up">About The club.jersey</h2>
             <div class="row align-items-center">
-                <div class="col-md-6 mb-4 mb-md-0">
+                <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
                     <img src="https://via.placeholder.com/600x400?text=About+Us+Image" alt="About Us" class="img-fluid rounded shadow">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-left">
                     <p class="lead">At **The club.jersey**, we are more than just a store; we are a community of passionate football fans. Our mission is to provide high-quality, authentic, and unique football jerseys that allow you to express your love for the beautiful game.</p>
                     <p>From the latest club kits to vintage classics and national team colors, we handpick every item to ensure it meets our standards of excellence. We also offer customization services so you can wear your heart on your sleeve, quite literally!</p>
                     <p>Join us in celebrating the spirit of football. Your passion, our jerseys – a perfect match.</p>
@@ -287,8 +294,8 @@
 
     <section id="contact" class="contact-section py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Get in Touch!</h2>
-            <div class="row justify-content-center">
+            <h2 class="text-center mb-5" data-aos="fade-up">Get in Touch!</h2>
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-md-8">
                     <form>
                         <div class="form-group">
@@ -347,6 +354,6 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>
