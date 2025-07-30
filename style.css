@@ -1,10 +1,10 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap');
+/* Import Google Fonts for an attractive look */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Open+Sans:wght@300;400;600;700&display=swap');
 
 /* General Body & Typography */
 body {
     font-family: 'Open Sans', sans-serif; /* Attractive, highly readable body font */
-    background-color: #f8f9fa;
+    background-color: #f8f9fa; /* Light background for freshness */
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -13,7 +13,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif; /* Strong, modern headings */
-    color: #212529;
+    color: #212529; /* Darker heading color */
     margin-bottom: 0.5em;
 }
 
@@ -21,36 +21,45 @@ p {
     margin-bottom: 1em;
 }
 
-/* Header (Bootstrap Navbar Overrides) */
-.navbar {
-    background: linear-gradient(to right, #0a1f44, #007bff); /* Your custom gradient */
+/* Header */
+.header {
+    /* NEW HEADER COLOR: Darker, richer blue gradient with !important */
+    background: linear-gradient(to right, #1a2a4b, #2a4a7a) !important;
     color: white;
     padding: 18px 5%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    /* `fixed-top` makes it sticky, so `position: sticky` and `top: 0` are handled by Bootstrap */
+    position: sticky;
+    top: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.navbar-brand.logo { /* Targeting the logo specifically */
+.header .logo {
     font-size: 32px;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #ffffff !important; /* Ensure it stays white */
+    color: #ffffff;
 }
 
-.navbar-nav .nav-item .nav-link { /* Targeting specific nav links for custom styles */
+.header nav {
+    display: flex;
+}
+
+.nav-link {
     color: white !important;
     font-weight: 500;
     padding: 8px 15px;
-    margin: 0 15px; /* Spacing between desktop nav items */
+    margin: 0 15px;
     transition: all 0.3s ease;
     position: relative;
     text-decoration: none;
     overflow: hidden;
 }
 
-.navbar-nav .nav-item .nav-link::after {
+.nav-link::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -62,7 +71,7 @@ p {
     transition: transform 0.3s ease;
 }
 
-.navbar-nav .nav-item .nav-link:hover::after {
+.nav-link:hover::after {
     transform: translateX(0);
 }
 
@@ -81,15 +90,6 @@ p {
 
 .header-icons i:hover {
     color: #f0ad4e;
-}
-
-/* Navbar Toggler (Hamburger Icon) */
-.navbar-toggler {
-    border-color: rgba(255, 255, 255, 0.5) !important; /* Custom border color */
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important; /* White hamburger lines */
 }
 
 /* Hero Section */
@@ -113,16 +113,16 @@ p {
 }
 
 .hero-text h1 {
-    font-size: 56px;
-    font-weight: 800;
+    font-size: 58px;
+    font-weight: 900;
     color: #0a1f44;
     line-height: 1.1;
     margin-bottom: 15px;
 }
 
 .hero-text p {
-    font-size: 18px;
-    color: #666;
+    font-size: 19px;
+    color: #555;
     margin-top: 10px;
     font-style: normal;
     max-width: 450px;
@@ -137,7 +137,7 @@ p {
 }
 
 .carousel-inner {
-    height: 450px;
+    height: 480px;
 }
 
 .carousel-item img {
@@ -531,7 +531,8 @@ h2::after {
 
 /* Footer */
 .footer {
-    background: linear-gradient(to right, #0a1f44, #007bff);
+    /* NEW FOOTER COLOR: Darker, richer blue gradient with !important */
+    background: linear-gradient(to right, #1a2a4b, #2a4a7a) !important;
     color: white;
     padding: 40px 0;
     margin-top: 50px;
@@ -577,29 +578,27 @@ h2::after {
     margin-bottom: 0;
 }
 
-/* Responsive Adjustments for Navbar Collapse */
-
-/* Styles for devices smaller than 992px (lg breakpoint) */
+/* Responsive Adjustments (using standard CSS media queries) */
 @media (max-width: 991.98px) {
-    .navbar-nav {
-        /* On small screens, nav items stack, remove horizontal margins */
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        text-align: center; /* Center links when stacked */
-        width: 100%; /* Take full width */
+    .header {
+        flex-direction: column;
+        padding: 15px 3%;
+        text-align: center;
     }
-
-    .navbar-nav .nav-item .nav-link {
-        margin: 5px 0; /* Vertical spacing for stacked links */
+    .header .logo {
+        margin-bottom: 15px;
     }
-
+    .header nav {
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-link {
+        margin: 5px 10px;
+    }
     .header-icons {
-        justify-content: center; /* Center icons when stacked below nav */
-        width: 100%; /* Take full width */
-        margin-top: 15px; /* Space between nav and icons */
+        justify-content: center;
     }
-
-    /* General responsive adjustments from previous versions */
     .hero-section {
         flex-direction: column;
         text-align: center;
@@ -617,7 +616,7 @@ h2::after {
         font-size: 48px;
     }
     .carousel-inner {
-        height: 350px; /* Adjust for medium screens */
+        height: 380px;
     }
     .customization-banner {
         padding: 60px 3%;
@@ -633,7 +632,6 @@ h2::after {
     }
 }
 
-/* Styles for devices smaller than 768px (md breakpoint) */
 @media (max-width: 767.98px) {
     .hero-text h1 {
         font-size: 38px;
@@ -642,7 +640,7 @@ h2::after {
         font-size: 16px;
     }
     .carousel-inner {
-        height: 300px; /* Adjust for smaller screens */
+        height: 300px;
     }
     h2 {
         font-size: 32px;
@@ -662,7 +660,6 @@ h2::after {
     }
 }
 
-/* Styles for devices smaller than 576px (sm breakpoint / mobile portrait) */
 @media (max-width: 575.98px) {
     .hero-section {
         padding: 50px 3%;
@@ -674,7 +671,7 @@ h2::after {
         font-size: 15px;
     }
     .carousel-inner {
-        height: 250px; /* Further adjust for very small screens */
+        height: 250px;
     }
     h2 {
         font-size: 28px;
